@@ -1,0 +1,9 @@
+ext {
+    localProperties = new Properties()
+    localPropertiesFile = rootProject.file('local.properties')
+    if (localPropertiesFile.exists()) {
+        localPropertiesFile.withInputStream { stream ->
+            localProperties.load(stream)
+        }
+    }
+}
